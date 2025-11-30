@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anushka's Big Question</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background: linear-gradient(to bottom, #ffe6f2, #ffcccc); color: #333; text-align: center; padding: 20px; }
+        h1 { color: #d63384; font-size: 2em; }
+        .heart { font-size: 3em; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        button { background: #ff69b4; color: white; border: none; padding: 15px 30px; font-size: 18px; cursor: pointer; margin: 10px; border-radius: 10px; }
+        button:hover { background: #ff1493; }
+        #response { display: none; font-size: 1.5em; margin-top: 20px; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> <!-- For confetti effect -->
+</head>
+<body>
+    <h1>So, Anushka...</h1>
+    <p>After all these reasons, I have to ask: Will you be my [girlfriend/boyfriend/partner/etc.]? *Final flirt: Saying yes would make you my favorite adventure yet!* 😉</p>
+    <div class="heart">❤️</div>
+    <button onclick="respond('yes')">Yes!</button>
+    <button onclick="respond('no')">No</button>
+    
+    <div id="response"></div>
+    
+    <script>
+        function respond(answer) {
+            const responseDiv = document.getElementById('response');
+            if (answer === 'yes') {
+                responseDiv.innerHTML = "<p>Yay! I can't wait to start this adventure with you. 💕 *Flirty bonus: You're officially my crush no more... my everything!* 😍</p>";
+                confetti(); // Triggers confetti animation
+            } else {
+                responseDiv.innerHTML = "<p>That's okay—I'm glad we can still be friends. 😊 *Flirt level: Still crushing, but respecting your space!*</p>";
+            }
+            responseDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
